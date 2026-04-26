@@ -68,6 +68,29 @@ Please follow this flow:
    parallel"), the 5-angle decomposition default, and the briefing
    template you'll write to. Read it ALL before I ask anything.
 
+   FOR REFERENCE — when I say "deep research on [currency]", the
+   default 5-agent fan-out is:
+   1. MONETARY POLICY — central bank stance, rates trajectory,
+      recent communications, real rate vs peers
+   2. FISCAL & MACRO — debt path, primary balance, inflation,
+      growth, current-account dynamics
+   3. CAPITAL FLOWS & TRADE — portfolio flows, FDI, trade balance
+      composition, FX reserve movements
+   4. GEOPOLITICS & REGIONAL CONTEXT — political stability, regional
+      spillovers, sanctions / trade-war exposure, election cycle
+   5. TECHNICALS & FLOW — price action vs key levels, real-money
+      vs leveraged positioning, recent flow color
+   Each agent runs in parallel with web access. You collect their
+   reports and synthesize one briefing into `briefings/<topic>-<date>.md`.
+
+   For theme questions (e.g. "EM funding stress") — decompose by
+   which currency-pair pockets the theme touches, not the country
+   shape. For comparative questions (e.g. "TRY vs ZAR") — drop to
+   3 agents: macro divergence, flow divergence, technical divergence.
+
+   Always show me the proposed decomposition before dispatching.
+   I should be able to swap an angle if I want.
+
 6. Open the folder in VS Code.
 
 7. Stop. Don't dispatch any sub-agents proactively. The workspace is

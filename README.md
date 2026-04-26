@@ -22,6 +22,21 @@ You open this folder in VS Code, run `claude`, and ask in plain English:
 
 Claude (the agent reading this folder's `CLAUDE.md`) recognizes the request, dispatches several sub-agents in parallel — each with its own research mandate — and synthesizes their findings into a single briefing saved to `briefings/<currency-or-topic>-<date>.md`.
 
+### The five default agents (for country / currency requests)
+
+When you say *"deep research on [currency]"* with no other framing, Claude fans out across these five angles:
+
+1. **Monetary policy** — central bank stance, rates trajectory, recent communications, real rate vs peers
+2. **Fiscal & macro** — debt path, primary balance, inflation, growth, current-account dynamics
+3. **Capital flows & trade** — portfolio flows, FDI, trade balance composition, FX reserve movements
+4. **Geopolitics & regional context** — political stability, regional spillovers, sanctions / trade-war exposure, election cycle
+5. **Technicals & flow** — price action vs key levels, real-money vs leveraged positioning, recent flow color
+
+Claude shows you the decomposition before dispatching — you can swap an angle if you want a different cut.
+
+**Theme questions** (e.g. *"EM funding stress"*) — decompose by which currency-pair pockets the theme touches, not the country shape.
+**Comparative questions** (e.g. *"TRY vs ZAR"*) — drops to 3 agents: macro divergence, flow divergence, technical divergence.
+
 **No slash commands. No API key. Just ask.**
 
 ## Why this works without an API key
