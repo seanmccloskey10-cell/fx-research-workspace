@@ -1,12 +1,12 @@
-# HANDOFF-PROMPT.md — Paste this into Claude Code on Bura's machine
+# HANDOFF-PROMPT.md — Paste this into Claude Code
 
-This is the prompt Bura pastes into Claude Code on his Mac mini to get the FX research workspace cloned and ready. Much lighter than the dashboard's handoff — there's nothing to install here, just clone and start. Copy everything between the lines below and paste it in one shot.
+Copy everything between the lines below and paste it in one shot to your AI agent in VS Code (Claude Code). The agent will clone and configure the workspace for you. Much lighter than the dashboard's handoff — there's nothing to install here, just clone and start.
 
 The prompt instructs the agent to:
 - **Enter plan mode FIRST** — propose what it'll do before running anything
-- **Recognize the OS handoff** — built/tested on Sean's Windows; Bura is on Mac
+- **Recognize the OS handoff** — built/tested on Sean's Windows; the user is on Mac
 - **Read CLAUDE.md** to understand the deep-research workflow before the user asks for it
-- **Confirm `claude login` (not API key)** — this workspace runs on Bura's Claude plan; an `ANTHROPIC_API_KEY` here would defeat the entire point
+- **Confirm `claude login` (not API key)** — this workspace runs on the user's Claude plan; an `ANTHROPIC_API_KEY` here would defeat the entire point
 
 ---
 
@@ -15,11 +15,11 @@ The prompt instructs the agent to:
 ---
 
 ```
-Hi — I'm Bura. I run a 7-person FX prop-desk based in Georgia. Sean
-(my AI tutor) built me a small VS Code project he wants me to clone
-to my Mac mini at home. It's not a tool to install — it's a folder I'll
-talk to via Claude Code to do deep currency research on my Claude plan
-(no API key, no metered calls).
+Someone built me a small VS Code project they want me to clone to my
+Mac. It's not a tool to install — it's a folder I'll talk to via Claude
+Code to do deep currency research on my Claude plan (no API key, no
+metered calls). I work in FX research and I'm AI-fluent (heavy Cowork
+user) but not a developer.
 
 I want you to clone this for me:
 
@@ -32,7 +32,7 @@ just installed the companion dashboard repo). Setup should take 2
 minutes.
 
 OS HANDOFF — IMPORTANT
-Sean tested this on Windows 11. I'm on macOS (Mac mini). The CLAUDE.md
+This was built and tested on Windows 11. I'm on macOS. The CLAUDE.md
 in the repo doesn't have any OS-specific code, so the workspace itself
 is OS-agnostic. But the way you (the agent) interact with the file
 system might differ — use macOS path conventions (~/Projects, forward
@@ -91,9 +91,9 @@ This is the COMPANION to my dashboard repo. The dashboard is a Streamlit
 website — when its AI Briefing button fires, it uses an Anthropic API
 key (metered, separate bill). This workspace is the opposite: every
 deep-research run dispatches sub-agents inside Claude Code, all of which
-share my Claude plan auth. No API key, no second bill. Sean is using the
-contrast as a teaching point — please don't muddy it by suggesting I
-add an API key here. There's no .env in this repo for a reason.
+share my Claude plan auth. No API key, no second bill. The contrast is
+intentional — please don't muddy it by suggesting I add an API key here.
+There's no .env in this repo for a reason.
 
 If you hit anything unexpected — STOP and ask me. Don't silently skip
 or work around anything.
@@ -114,8 +114,8 @@ The workspace itself is OS-agnostic. The clone path becomes `%USERPROFILE%\Proje
 Three reasons:
 
 1. **No installs.** The dashboard needs Python, dependencies, a venv, a Streamlit process. This workspace needs none of that — just a clone.
-2. **No setup gates.** The dashboard has an "is data flowing?" smoke test. This workspace has nothing to smoke-test until Bura actually triggers a deep research run.
-3. **The agent's behaviour is what matters here, not the install dance.** The CLAUDE.md inside the repo carries the natural-language triggers, the dispatch flow, the briefing template. The handoff prompt's only job is to get the agent to read it before Bura's first request.
+2. **No setup gates.** The dashboard has an "is data flowing?" smoke test. This workspace has nothing to smoke-test until the user actually triggers a deep research run.
+3. **The agent's behaviour is what matters here, not the install dance.** The CLAUDE.md inside the repo carries the natural-language triggers, the dispatch flow, the briefing template. The handoff prompt's only job is to get the agent to read it before the user's first request.
 
 ## Cross-references
 

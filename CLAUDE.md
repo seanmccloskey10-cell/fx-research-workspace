@@ -10,7 +10,7 @@ This is the COMPANION to the user's `exotic-fx-research-desk` repo (the Streamli
 
 ## Who the user is
 
-**Bura.** Senior FX prop-desk operator (7-person desk, based in Georgia). Already AI-fluent and a heavy Cowork user. He has Bloomberg at the desk — your job here is the *deep research synthesis* layer that Bloomberg doesn't do. He doesn't want to type slash commands and won't remember if you teach him any. **Recognize his intent from natural English instead.**
+The user is an **FX research professional** — AI-fluent (heavy Cowork user), with Bloomberg or comparable real-time market data already at hand. Your job here is the *deep research synthesis* layer that Bloomberg doesn't do. They don't want to type slash commands and won't remember if you teach them any. **Recognize their intent from natural English instead.**
 
 ## The natural-language triggers — recognize these as "deep research" requests
 
@@ -68,7 +68,7 @@ When all sub-agents return, you (the main agent) synthesize their reports into a
 title: <Topic> — Deep Research Briefing
 created: YYYY-MM-DD
 agents_dispatched: 5
-synthesis_by: Claude Code (Bura's plan)
+synthesis_by: Claude Code (the user's plan)
 ---
 
 ## TL;DR
@@ -111,14 +111,14 @@ synthesis_by: Claude Code (Bura's plan)
 
 ### 4. Report back to the user
 
-Tell Bura:
+Tell the user:
 - Where you saved the briefing (path)
 - The 2–3 highest-leverage findings — not a recap of every section
 - One question you'd want him to weigh in on if he has 30 seconds
 
 ## The hard rules
 
-1. **No paid API calls.** This workspace runs on Bura's Claude plan via Claude Code's authentication. Sub-agents are also plan-covered. **Never** suggest adding `ANTHROPIC_API_KEY` here — that would defeat the entire point. If a workflow genuinely needs metered API access, point him to the dashboard repo.
+1. **No paid API calls.** This workspace runs on the user's Claude plan via Claude Code's authentication. Sub-agents are also plan-covered. **Never** suggest adding `ANTHROPIC_API_KEY` here — that would defeat the entire point. If a workflow genuinely needs metered API access, point him to the dashboard repo.
 
 2. **Sub-agents fan out; the main agent synthesizes.** Don't try to do all five angles yourself in one go. The whole reason this beats a single chat is parallel context bandwidth. Honour that.
 
@@ -126,13 +126,13 @@ Tell Bura:
 
 4. **Cite sources, flag uncertainty.** This is a prop-desk operator's research, not a casual chat. Inline citations (publisher + date) for every factual claim. Explicit *"unverified"* flags for things sub-agents couldn't confirm. Never invent.
 
-5. **No buy / sell / hold language.** Bura runs his own desk. The briefing is analysis, not advice. *"Risk-reward looks asymmetric to the upside if X holds"* is fine. *"Long USDVND"* is not.
+5. **No buy / sell / hold language.** the user runs his own desk. The briefing is analysis, not advice. *"Risk-reward looks asymmetric to the upside if X holds"* is fine. *"Long USDVND"* is not.
 
-6. **Don't propose to use slash commands.** Bura forgets they exist. The workspace works through plain English — that's deliberate.
+6. **Don't propose to use slash commands.** the user forgets they exist. The workspace works through plain English — that's deliberate.
 
 ## When to ask before dispatching agents
 
-- Bura asks for "research" without specifying depth — confirm quick-read vs deep dive (one question)
+- the user asks for "research" without specifying depth — confirm quick-read vs deep dive (one question)
 - Topic decomposition isn't obvious (e.g., a multi-country theme question) — show him the angles before fanning out
 - The topic's outside FX (e.g., he asks about a stock) — confirm he wants this workspace's pattern applied (it generalizes fine, but ask)
 
@@ -144,7 +144,7 @@ Tell Bura:
 
 ## Common asks (English → action mapping)
 
-| Bura says | You do |
+| the user says | You do |
 |---|---|
 | *"Do deep research on the dong"* | Confirm 5-angle decomposition for VND, dispatch 5 agents in parallel, synthesize, write to `briefings/vnd-<date>.md` |
 | *"Update the lira briefing — what's changed?"* | Read existing `briefings/try-<old-date>.md`, dispatch 3 agents on policy/macro/flow deltas, write to `briefings/try-<new-date>-update.md` |
@@ -154,7 +154,7 @@ Tell Bura:
 
 ## Performance budget
 
-A 5-agent deep research run typically takes 5–10 minutes wall-clock. Tell Bura up front when he triggers a deep run — set the expectation, then go quiet while agents work. Don't progress-spam during the run.
+A 5-agent deep research run typically takes 5–10 minutes wall-clock. Tell the user up front when he triggers a deep run — set the expectation, then go quiet while agents work. Don't progress-spam during the run.
 
 ## What this workspace is NOT
 
