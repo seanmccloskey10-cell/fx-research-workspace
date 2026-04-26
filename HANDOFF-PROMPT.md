@@ -12,7 +12,7 @@ This workspace requires:
 - **Claude Code CLI** (`claude` command in a terminal — *NOT* the VS Code "Claude" extension; they are different products)
 - **Authenticated to a Claude plan** (not via `ANTHROPIC_API_KEY` env var)
 
-**The Claude Code CLI is critical for this workspace specifically** — the deep-research feature dispatches sub-agents in parallel, which is a CLI capability. The VS Code extension's chat panel may or may not support the same dispatch behavior; if you're using the extension and the 5-agent fan-out doesn't work, fall back to single-agent research or switch to the CLI.
+**A note on Claude Code CLI vs the VS Code extension:** the workspace works through either. The deep-research feature dispatches sub-agents in parallel, which definitely works in the CLI; the VS Code extension may or may not support the same parallel dispatch. **Try the extension first (it's what most students will use)** — if the 5-agent fan-out fires, you're done. If it doesn't and only single-agent research happens, that's still useful; switch to the CLI later if you want true parallel dispatch.
 
 **If any prerequisites are missing, run [PREREQUISITES.md](PREREQUISITES.md) FIRST.** The prerequisites prompt batches every install into one elevated session (one UAC popup on Windows, one Apple GUI password dialog on Mac) so you don't drown in permission prompts. It also installs the Claude Code CLI and verifies plan auth.
 
@@ -62,15 +62,15 @@ Before anything else, verify I have the prerequisites installed:
 - Plan auth (NOT API key): `echo $ANTHROPIC_API_KEY` should return
   empty / unset
 
-DISAMBIGUATION — IMPORTANT FOR THIS WORKSPACE
-"Claude Code CLI" (the `claude` command in Terminal) is a separate
-product from the "Claude" VS Code extension. This workspace is
-designed for the CLI specifically because deep-research uses
-sub-agent dispatch, which is a CLI capability. If I'm currently
-talking to you through the VS Code extension chat panel, that's
-fine for setting up — but the actual deep-research feature may not
-work the same way through the extension. Confirm `which claude`
-returns a real path before proceeding.
+A NOTE ON YOUR SETUP
+You may be talking to me through either the Claude Code CLI (the
+`claude` command in Terminal) or the Claude VS Code extension chat
+panel. **Both work for the install steps below** — clone, file
+reads, etc. The only feature this workspace has that *might* differ
+between them is the parallel sub-agent dispatch for deep research.
+If we get to that step and parallel dispatch doesn't fire, we'll
+fall back to single-agent research and worry about switching to the
+CLI later (only if you want it).
 
 If ANY prerequisites are missing, STOP and tell me. I'll go run
 the prerequisites prompt at PREREQUISITES.md in this same repo
@@ -199,15 +199,15 @@ USE POWERSHELL for these checks:
   `Get-Item Env:\ANTHROPIC_API_KEY -ErrorAction SilentlyContinue`
   (should return empty)
 
-DISAMBIGUATION — IMPORTANT FOR THIS WORKSPACE
-"Claude Code CLI" (the `claude` command in a terminal) is a separate
-product from the "Claude" VS Code extension. This workspace is
-designed for the CLI specifically because deep-research uses
-sub-agent dispatch, which is a CLI capability. If I'm currently
-talking to you through the VS Code extension chat panel, that's
-fine for setting up — but the actual deep-research feature may not
-work the same way through the extension. Confirm `where.exe claude`
-returns a real path before proceeding.
+A NOTE ON YOUR SETUP
+You may be talking to me through either the Claude Code CLI (the
+`claude` command in a terminal) or the Claude VS Code extension
+chat panel. **Both work for the install steps below** — clone, file
+reads, etc. The only feature this workspace has that *might* differ
+between them is the parallel sub-agent dispatch for deep research.
+If we get to that step and parallel dispatch doesn't fire, we'll
+fall back to single-agent research and worry about switching to the
+CLI later (only if you want it).
 
 If ANY prerequisites are missing, STOP and tell me. I'll go run
 the prerequisites prompt at PREREQUISITES.md in this same repo
