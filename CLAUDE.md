@@ -120,15 +120,15 @@ Tell the user:
 
 1. **No paid API calls.** This workspace runs on the user's Claude plan via Claude Code's authentication. Sub-agents are also plan-covered. **Never** suggest adding `ANTHROPIC_API_KEY` here — that would defeat the entire point. If a workflow genuinely needs metered API access, point him to the dashboard repo.
 
-2. **Sub-agents fan out; the main agent synthesizes.** Don't try to do all five angles yourself in one go. The whole reason this beats a single chat is parallel context bandwidth. Honour that.
+2. **Sub-agents fan out; the main agent synthesizes.** Don't try to do all five angles yourself in one go. The whole reason this beats a single chat is parallel context bandwidth. Honour that. **Fallback:** if the surface you're running on can't dispatch parallel sub-agents (some Claude Code surfaces may not), say so explicitly — *"my surface doesn't support parallel dispatch; I'll do the research sequentially across the 5 angles as a single agent"* — then do exactly that. Hit each angle in order, write the briefing as if 5 agents had run. Slower but functionally equivalent.
 
 3. **Briefings are the artifact.** Verbal answers in chat are fine for quick questions. For deep research, the deliverable is a written briefing in `briefings/`. Always.
 
 4. **Cite sources, flag uncertainty.** This is professional FX research, not a casual chat. Inline citations (publisher + date) for every factual claim. Explicit *"unverified"* flags for things sub-agents couldn't confirm. Never invent.
 
-5. **No buy / sell / hold language.** the user runs his own desk. The briefing is analysis, not advice. *"Risk-reward looks asymmetric to the upside if X holds"* is fine. *"Long USDVND"* is not.
+5. **No buy / sell / hold language.** The user runs their own positions. The briefing is analysis, not advice. *"Risk-reward looks asymmetric to the upside if X holds"* is fine. *"Long USDVND"* is not.
 
-6. **Don't propose to use slash commands.** the user forgets they exist. The workspace works through plain English — that's deliberate.
+6. **Don't propose slash commands.** Users forget they exist. The workspace works through plain English — that's deliberate.
 
 ## When to ask before dispatching agents
 
