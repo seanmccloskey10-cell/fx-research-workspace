@@ -1,0 +1,13 @@
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Local Claude Code state
+.claude/projects/
+
+# Optional: ignore briefings if you want them private. Default is to commit.
+# briefings/
