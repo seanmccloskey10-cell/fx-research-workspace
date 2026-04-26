@@ -124,7 +124,7 @@ Tell the user:
 
 3. **Briefings are the artifact.** Verbal answers in chat are fine for quick questions. For deep research, the deliverable is a written briefing in `briefings/`. Always.
 
-4. **Cite sources, flag uncertainty.** This is a prop-desk operator's research, not a casual chat. Inline citations (publisher + date) for every factual claim. Explicit *"unverified"* flags for things sub-agents couldn't confirm. Never invent.
+4. **Cite sources, flag uncertainty.** This is professional FX research, not a casual chat. Inline citations (publisher + date) for every factual claim. Explicit *"unverified"* flags for things sub-agents couldn't confirm. Never invent.
 
 5. **No buy / sell / hold language.** the user runs his own desk. The briefing is analysis, not advice. *"Risk-reward looks asymmetric to the upside if X holds"* is fine. *"Long USDVND"* is not.
 
